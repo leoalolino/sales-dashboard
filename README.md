@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sales Analytics Dashboard
+
+An interactive sales analytics dashboard built with **Next.js 15**, **TypeScript**, **Tailwind CSS**, and **Recharts**, organized using the **Atomic Design** component methodology.
+
+## Features
+
+- **Multi-Year Sales Data** — View revenue, profit, and orders for 2022, 2023, and 2024
+- **Custom Filter Input** — Set a minimum revenue threshold to focus on top-performing months
+- **Year Selector** — Toggle between individual years or view all years combined
+- **Multiple Chart Types** — Switch between Bar, Line, and Pie charts via toggle buttons
+- **API Integration** — Fetch data from a built-in API route or use client-side mock data (toggle with checkbox)
+- **Summary Statistics** — Total revenue, total orders, and average monthly revenue with period-over-period change
+
+## Tech Stack
+
+| Tool           | Purpose              |
+| -------------- | -------------------- |
+| Next.js 15     | React framework      |
+| TypeScript     | Type safety          |
+| Tailwind CSS   | Styling              |
+| Recharts       | Charting library     |
+| Atomic Design  | Component structure  |
+
+## Project Structure (Atomic Design)
+
+```
+src/
+├── app/
+│   ├── api/sales/route.ts    # API endpoint with year & minRevenue params
+│   ├── dashboard/page.tsx    # Dashboard page
+│   ├── layout.tsx            # Root layout
+│   └── page.tsx              # Landing page
+├── components/
+│   ├── atoms/                # Smallest building blocks
+│   │   ├── Button.tsx
+│   │   ├── Card.tsx
+│   │   ├── Input.tsx
+│   │   └── Select.tsx
+│   ├── molecules/            # Composed atoms
+│   │   ├── ChartTypeSwitcher.tsx
+│   │   ├── FilterBar.tsx
+│   │   ├── SalesChart.tsx
+│   │   └── StatCard.tsx
+│   └── organisms/            # Complex UI sections
+│       └── SalesDashboard.tsx
+└── lib/
+    ├── mockData.ts           # Sales data for 2022-2024
+    └── types.ts              # TypeScript interfaces
+```
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# 1. Install dependencies
+npm install
+
+# 2. Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# 3. Open in browser
+open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Navigate to the **Dashboard** page to explore the charts and filters.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API Endpoint
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+GET /api/sales?year=2024&minRevenue=50000
+```
 
-## Learn More
+| Parameter    | Type   | Description                               |
+| ------------ | ------ | ----------------------------------------- |
+| `year`       | number | Filter by year (2022, 2023, 2024)         |
+| `minRevenue` | number | Minimum revenue threshold per month       |
 
-To learn more about Next.js, take a look at the following resources:
+## Build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+```

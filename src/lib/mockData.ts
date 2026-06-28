@@ -1,0 +1,55 @@
+import { YearlySales } from './types'
+
+export const salesData: YearlySales[] = [
+  {
+    year: 2022,
+    data: [
+      { month: 'Jan', revenue: 42000, profit: 12500, orders: 340 },
+      { month: 'Feb', revenue: 38500, profit: 11200, orders: 310 },
+      { month: 'Mar', revenue: 45000, profit: 13800, orders: 370 },
+      { month: 'Apr', revenue: 47000, profit: 14200, orders: 390 },
+      { month: 'May', revenue: 51000, profit: 15800, orders: 420 },
+      { month: 'Jun', revenue: 53000, profit: 16500, orders: 440 },
+      { month: 'Jul', revenue: 49000, profit: 15100, orders: 410 },
+      { month: 'Aug', revenue: 48000, profit: 14700, orders: 400 },
+      { month: 'Sep', revenue: 52000, profit: 16200, orders: 430 },
+      { month: 'Oct', revenue: 55000, profit: 17100, orders: 460 },
+      { month: 'Nov', revenue: 58000, profit: 18200, orders: 490 },
+      { month: 'Dec', revenue: 62000, profit: 19500, orders: 520 },
+    ],
+  },
+  {
+    year: 2023,
+    data: [
+      { month: 'Jan', revenue: 48000, profit: 14200, orders: 370 },
+      { month: 'Feb', revenue: 45000, profit: 13100, orders: 350 },
+      { month: 'Mar', revenue: 52000, profit: 15800, orders: 400 },
+      { month: 'Apr', revenue: 55000, profit: 16800, orders: 430 },
+      { month: 'May', revenue: 59000, profit: 18200, orders: 460 },
+      { month: 'Jun', revenue: 63000, profit: 19500, orders: 500 },
+      { month: 'Jul', revenue: 58000, profit: 17800, orders: 470 },
+      { month: 'Aug', revenue: 56000, profit: 17100, orders: 450 },
+      { month: 'Sep', revenue: 61000, profit: 18900, orders: 490 },
+      { month: 'Oct', revenue: 65000, profit: 20200, orders: 520 },
+      { month: 'Nov', revenue: 68000, profit: 21200, orders: 550 },
+      { month: 'Dec', revenue: 72000, profit: 22800, orders: 590 },
+    ],
+  },
+  {
+    year: 2024,
+    data: [
+      { month: 'Jan', revenue: 52000, profit: 15800, orders: 400 },
+      { month: 'Feb', revenue: 49000, profit: 14800, orders: 380 },
+      { month: 'Mar', revenue: 57000, profit: 17500, orders: 440 },
+      { month: 'Apr', revenue: 61000, profit: 18800, orders: 470 },
+      { month: 'May', revenue: 65000, profit: 20200, orders: 510 },
+      { month: 'Jun', revenue: 69000, profit: 21500, orders: 540 },
+      { month: 'Jul', revenue: 64000, profit: 19800, orders: 500 },
+      { month: 'Aug', revenue: 62000, profit: 19100, orders: 480 },
+      { month: 'Sep', revenue: 67000, profit: 20800, orders: 520 },
+      { month: 'Oct', revenue: 71000, profit: 22200, orders: 560 },
+      { month: 'Nov', revenue: 75000, profit: 23500, orders: 600 },
+      { month: 'Dec', revenue: 80000, profit: 25200, orders: 640 },
+    ],
+  },
+]
