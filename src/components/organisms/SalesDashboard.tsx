@@ -15,19 +15,22 @@ export function SalesDashboard() {
   const [useApi, setUseApi] = useState(false)
 
   useEffect(() => {
-    if (!useApi) {
-      setApiData(null)
-      return
-    }
-    const params = new URLSearchParams()
-    if (selectedYear !== 'all') params.set('year', selectedYear)
-    if (threshold) params.set('minRevenue', threshold)
+    const id = setTimeout(() => {
+      if (!useApi) {
+        setApiData(null)
+        return
+      }
+      const params = new URLSearchParams()
+      if (selectedYear !== 'all') params.set('year', selectedYear)
+      if (threshold) params.set('minRevenue', threshold)
 
-    setLoading(true)
-    fetch(`/api/sales?${params.toString()}`)
-      .then((r) => r.json())
-      .then(setApiData)
-      .finally(() => setLoading(false))
+      setLoading(true)
+      fetch(`/api/sales?${params.toString()}`)
+        .then((r) => r.json())
+        .then(setApiData)
+        .finally(() => setLoading(false))
+    }, 0)
+    return () => clearTimeout(id)
   }, [selectedYear, threshold, useApi])
 
   const filteredData = useMemo(() => {
@@ -58,7 +61,6 @@ export function SalesDashboard() {
     const totalPrev = prev.reduce((sum, y) => sum + y.data.reduce((s, d) => s + d.revenue, 0), 0)
 
     const ordersCurrent = current.reduce((sum, y) => sum + y.data.reduce((s, d) => s + d.orders, 0), 0)
-    const ordersPrev = prev.reduce((sum, y) => sum + y.data.reduce((s, d) => s + d.orders, 0), 0)
 
     const avgRevenue = current.length > 0 && current[0].data.length > 0
       ? Math.round(totalCurrent / (current.length * current[0].data.length))
@@ -79,12 +81,12 @@ export function SalesDashboard() {
           onThresholdChange={setThreshold}
         />
         <div className="flex items-center gap-4">
-          <label className="flex items-center gap-2 text-sm text-gray-600">
+          <label className="flex items-center gap-2 text-xs uppercase tracking-wider text-stone-500">
             <input
               type="checkbox"
               checked={useApi}
               onChange={(e) => setUseApi(e.target.checked)}
-              className="rounded"
+              className="border-stone-300 text-amber-700"
             />
             Use API
           </label>
@@ -111,7 +113,7 @@ export function SalesDashboard() {
 
       <Card title="Sales Overview">
         {loading ? (
-          <div className="flex items-center justify-center h-80 text-gray-400">Loading...</div>
+          <div className="flex items-center justify-center h-80 text-stone-400 uppercase tracking-wider">loading...</div>
         ) : (
           <SalesChart data={filteredData} chartType={chartType} />
         )}

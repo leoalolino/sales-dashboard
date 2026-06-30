@@ -1,4 +1,4 @@
-import { YearlySales } from './types'
+import { YearlySales, Product } from './types'
 
 export const salesData: YearlySales[] = [
   {
@@ -52,4 +52,17 @@ export const salesData: YearlySales[] = [
       { month: 'Dec', revenue: 80000, profit: 25200, orders: 640 },
     ],
   },
+]
+
+export const productsData: Product[] = [
+  { id: 1, name: 'Wireless Bluetooth Headphones', category: 'Electronics', unitsSold: 2450, revenue: 367500, stock: 'In Stock' },
+  { id: 2, name: 'Premium Running Shoes', category: 'Footwear', unitsSold: 1830, revenue: 274500, stock: 'Low' },
+  { id: 3, name: 'Organic Cotton T-Shirt', category: 'Apparel', unitsSold: 4200, revenue: 210000, stock: 'In Stock' },
+  { id: 4, name: 'Stainless Steel Water Bottle', category: 'Accessories', unitsSold: 3100, revenue: 93000, stock: 'In Stock' },
+  { id: 5, name: 'Leather Messenger Bag', category: 'Accessories', unitsSold: 890, revenue: 178000, stock: 'Low' },
+  { id: 6, name: 'Smart Fitness Tracker', category: 'Electronics', unitsSold: 1650, revenue: 330000, stock: 'Out of Stock' },
+  { id: 7, name: 'Wool Blend Sweater', category: 'Apparel', unitsSold: 1200, revenue: 180000, stock: 'In Stock' },
+  { id: 8, name: 'Ergonomic Office Chair', category: 'Furniture', unitsSold: 520, revenue: 260000, stock: 'In Stock' },
+  { id: 9, name: 'Portable Bluetooth Speaker', category: 'Electronics', unitsSold: 2100, revenue: 210000, stock: 'Low' },
+  { id: 10, name: 'Yoga Mat Premium', category: 'Fitness', unitsSold: 2800, revenue: 112000, stock: 'In Stock' },
 ]

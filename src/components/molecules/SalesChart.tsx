@@ -6,7 +6,7 @@ import {
 } from 'recharts'
 import { ChartType, YearlySales } from '@/lib/types'
 
-const COLORS = ['#2563eb', '#16a34a', '#dc2626', '#f59e0b', '#8b5cf6', '#ec4899']
+const COLORS = ['#c45a3c', '#2d5a5e', '#d4a040', '#6b4c3b', '#3a7a5a', '#a04060']
 
 interface SalesChartProps {
   data: YearlySales[]
@@ -17,8 +17,8 @@ interface SalesChartProps {
 export function SalesChart({ data, chartType, dataKey = 'revenue' }: SalesChartProps) {
   if (data.length === 0) {
     return (
-      <div className="flex items-center justify-center h-80 text-gray-400">
-        No data matches the current filters.
+      <div className="flex items-center justify-center h-80 text-stone-400 uppercase tracking-wider">
+        no data matches the current filters.
       </div>
     )
   }

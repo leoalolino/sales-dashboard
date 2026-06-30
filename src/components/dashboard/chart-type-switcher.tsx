@@ -1,6 +1,5 @@
 'use client'
 
-import { Button } from '@/components/atoms'
 import { ChartType } from '@/lib/types'
 
 interface ChartTypeSwitcherProps {
@@ -16,15 +15,15 @@ const TYPES: { label: string; value: ChartType }[] = [
 
 export function ChartTypeSwitcher({ active, onChange }: ChartTypeSwitcherProps) {
   return (
-    <div className="flex">
-      {TYPES.map((t, i) => (
+    <div className="flex border-2 border-stone-300 dark:border-stone-700">
+      {TYPES.map((t) => (
         <button
           key={t.value}
           onClick={() => onChange(t.value)}
-          className={`px-3 py-1.5 text-xs uppercase tracking-wider border-2 -ml-[2px] first:ml-0 transition-colors ${
+          className={`px-3 py-1.5 text-xs uppercase tracking-wider transition-colors ${
             active === t.value
-              ? 'bg-stone-800 text-amber-50 border-stone-800 dark:bg-amber-50 dark:text-stone-800 dark:border-amber-50'
-              : 'bg-amber-50 dark:bg-stone-900 text-stone-600 dark:text-stone-400 border-stone-300 dark:border-stone-700 hover:bg-stone-200 dark:hover:bg-stone-800'
+              ? 'bg-stone-800 text-amber-50 dark:bg-amber-50 dark:text-stone-800'
+              : 'text-stone-600 dark:text-stone-400 hover:bg-stone-200 dark:hover:bg-stone-800'
           }`}
         >
           {t.label}

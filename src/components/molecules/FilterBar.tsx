@@ -13,7 +13,7 @@ export function FilterBar({ selectedYear, onYearChange, threshold, onThresholdCh
   return (
     <div className="flex flex-wrap gap-4 items-end">
       <Select
-        label="Year"
+        label="YEAR"
         value={selectedYear}
         onChange={onYearChange}
         options={[
@@ -24,7 +24,7 @@ export function FilterBar({ selectedYear, onYearChange, threshold, onThresholdCh
         ]}
       />
       <Input
-        label="Min Revenue ($)"
+        label="MIN REVENUE ($)"
         value={threshold}
         onChange={onThresholdChange}
         placeholder="e.g. 50000"
